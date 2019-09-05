@@ -9,15 +9,15 @@ corr <- function(
   
 for (i in looplist$id) 
 {
-  # print(i)
+   #print(i)
   # if key val is above threshold, then do calc
   # else skip
-  if (looplist$nobs > threshold)
+  paste("For the var i", i, " the value was ", looplist[i,"nobs"])
+  if (looplist[i,"nobs"] > threshold)
   {
-    print("Found one")
+    #sprintf("For the var i %d the value was %d", i, looplist[i,"nobs"])
   }
-  
-  
 }
+  head(looplist)
 }
 
