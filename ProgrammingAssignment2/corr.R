@@ -1,4 +1,28 @@
 #source("complete.R")
+getsulfate <- function(id)
+{
+  #c<-nchar(id)
+  if (id < 10){
+    p<-paste("00",id, collapse = "", sep = "")
+  } else if (id > 10 && id < 100) {
+    p<-paste("0",id, collapse = "", sep = "")
+  } else {
+    p<-paste("",id, collapse = "", sep = "")
+  }
+  #cofp<-nchar(p)
+  #n<-substr(p,(cofp-c),cofp)
+  #print(c)
+  #print(p)
+  #print(cofp)
+  #print(n)
+  myfilename<-paste(p,".csv", collapse = "", sep = "")
+  #myfilename<-paste(id,".csv")
+  myfilename
+  #df<-read.csv(myfilename)
+  #head(df)
+  
+}
+
 corr <- function(
   directory,
   threshold = 0
