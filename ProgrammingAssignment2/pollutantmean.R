@@ -1,13 +1,17 @@
 pollutantmean <- function(
 directory,  
 pollutant, 
-id)
+id=1:332)
 {
+  savedir<-getwd()
   setwd(directory)
   files<-list.files(path=getwd(),pattern="*.csv",full.names = T)
   df<-do.call(rbind, lapply(files, read.csv))
-  df2<-subset(subset(df,df$ID %in% id), !is.na(df[[pollutant]]))
-  meanvalue<-colMeans(subset(df2[pollutant],), na.rm=T)
+  df2<-subset(df,df$ID %in% id)
+  df3<-subset(df2, !is.na(df2[[pollutant]]))
+  df4<-subset(df3[pollutant],)
+  meanvalue<-colMeans(df4, na.rm=T)
+  setwd(savedir)
   return(meanvalue)
 }
 

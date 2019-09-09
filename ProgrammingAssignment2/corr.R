@@ -62,6 +62,8 @@ corr <- function(
   threshold = 0
 )
 {
+  savedir<-getwd()
+  
   looplist<-complete(directory)
   v<-numeric()
 for (i in looplist$id) 
@@ -93,7 +95,9 @@ for (i in looplist$id)
   }
 }
   # head(looplist)
-  #head(v)
+  setwd(savedir)
+  
+    #head(v)
   v
 }
 
